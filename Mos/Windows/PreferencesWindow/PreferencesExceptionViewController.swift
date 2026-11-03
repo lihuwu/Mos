@@ -38,6 +38,11 @@ class PreferencesExceptionViewController: NSViewController {
         // 检查表格数据
         toggleNoDataHint(animate: false)
     }
+    override func viewDidLayout() {
+        super.viewDidLayout()
+        // 重新计算表格尺寸
+        tableView.tile()
+    }
     
     // 白名单模式
     @IBAction func allowListModeClick(_ sender: NSButton) {
